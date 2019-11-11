@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="AutoCustomsClearance.XAML.CalculatorPage"
+             Title="Расчет пошлины"
+             Style="{StaticResource PageStyle}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="Keyboard" Value="Numeric"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="FlexLayoutStyle" TargetType="FlexLayout">
+                <Setter Property="Direction" Value="Row"/>
+                <Setter Property="AlignItems" Value="Center"/>
+                <Setter Property="Margin" Value="5,2,2,2"/>
+                <Setter Property="JustifyContent" Value="SpaceBetween"/>
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="3"/>
+                <Setter Property="BorderColor" Value="#d5d5d5"/>
+                <Setter Property="Padding" Value="0,0,0,0"/>
+                <Setter Property="HasShadow" Value="True"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <FlexLayout Direction="Row" BackgroundColor="#2196F3">
+                </FlexLayout>
+                <Frame BackgroundColor="White" CornerRadius="3" Margin="2,1,2,2">
+                    <StackLayout>
+                        <Grid Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Text="Возраст автомобиля:" VerticalTextAlignment="Center"/>
+                            <Frame Grid.Column="1" Grid.Row="0" x:Name="YearOfAuto" Style="{StaticResource FrameStyle}"/>
+                            <Label Grid.Column="0" Grid.Row="1" Text="Стоимость, EUR:" VerticalTextAlignment="Center"/>
+                            <Frame Grid.Column="1" Grid.Row="1" Style="{StaticResource FrameStyle}">
+                                <Entry  x:Name="Cost" Style="{StaticResource EntryStyle}"/>
+                            </Frame>
+                            <Label Grid.Column="0" Grid.Row="2" Text="Тип двигателя:" VerticalTextAlignment="Center"/>
+                            <Frame Grid.Column="1" Grid.Row="2" Style="{StaticResource FrameStyle}">
+                                <Picker x:Name="EngineType" HorizontalOptions="CenterAndExpand" FontSize="Small">
+                                    <Picker.Items>
+                                        <x:String>Бензин</x:String>
+                                        <x:String>Дизель</x:String>
+                                    </Picker.Items>
+                                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                                </Picker>
+                            </Frame>
+                            <Label  Grid.Column="0" Grid.Row="3" Text="Объем двигателя, см.куб:" VerticalTextAlignment="Center"/>
+                            <Frame  Grid.Column="1" Grid.Row="3" Style="{StaticResource FrameStyle}">
+                                <Entry  x:Name="Volume" Style="{StaticResource EntryStyle}"/>
+                            </Frame>
+                        </Grid>
+                        <FlexLayout Direction="Row" Margin="0,15,0,0" AlignItems="Center">
+                            <Switch x:Name="isElectricEngine" Toggled="ElectricCarToggled"/>
+                            <Label Text="электромобиль" TextColor="Green"/>
+                            <ImageButton 
+                                Source="help.png"
+                                HorizontalOptions="EndAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                Margin="28,0,0,0"
+                                Clicked="OnHelpByEletricCarClicked"
+                                BackgroundColor="Transparent"
+                                WidthRequest="27"
+                                HeightRequest="27"
+                                Opacity=".5">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup>
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                        </FlexLayout>
+                        <FlexLayout Direction="Row" AlignItems="Center">
+                            <Switch x:Name="isDiscount"/>
+                            <Label Text="применить скидку"/>
+                            <ImageButton 
+                                Source="help.png"
+                                HorizontalOptions="EndAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                Margin="10,0,0,0"
+                                Clicked="OnHelpClicked"
+                                BackgroundColor="Transparent"
+                                WidthRequest="27"
+                                HeightRequest="27"
+                                Opacity=".5">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup>
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                        </FlexLayout>
+                        <FlexLayout Direction="Row" AlignItems="Center">
+                            <Switch x:Name="isBuisnes"/>
+                            <Label Text="юридическое лицо"/>
+                        </FlexLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame x:Name="resultFrame" BackgroundColor="White" CornerRadius="3" Margin="2,1,2,2" IsVisible="False">
+                    <FlexLayout x:Name="Results" Style="{StaticResource FlexLayoutStyle}">
+                        
+                    </FlexLayout>
+                </Frame>
+                
+                    <FlexLayout Direction="Row" VerticalOptions="EndAndExpand" JustifyContent="Center">
+                    <Button x:Name="Calculate" Clicked="OnCalculateClicked" Text="Посчитать"
+                                Margin="0,15,0,0"
+                                BackgroundColor="Orange"
+                                HeightRequest="55"
+                                WidthRequest="3000"
+                                HorizontalOptions="Center"
+                                CornerRadius="0"/>
+                    <Button x:Name="Reset" Clicked="OnResetClicked" Text="Сброс"
+                                Margin="0,15,0,0"
+                                BackgroundColor="#da711d"
+                                HeightRequest="55"
+                                WidthRequest="3000"
+                                HorizontalOptions="Center"
+                                CornerRadius="0"/>
+                </FlexLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

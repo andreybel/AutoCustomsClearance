@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCustomsClearance.Android", "AutoCustomsClearance\AutoCustomsClearance.Android\AutoCustomsClearance.Android.csproj", "{5F37F151-212F-4D98-B56E-46363CB9AFBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCustomsClearance", "AutoCustomsClearance\AutoCustomsClearance\AutoCustomsClearance.csproj", "{675FF721-AB5A-42DA-97D2-EFB2D2DE6DAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F37F151-212F-4D98-B56E-46363CB9AFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F37F151-212F-4D98-B56E-46363CB9AFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F37F151-212F-4D98-B56E-46363CB9AFBB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5F37F151-212F-4D98-B56E-46363CB9AFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F37F151-212F-4D98-B56E-46363CB9AFBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F37F151-212F-4D98-B56E-46363CB9AFBB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{675FF721-AB5A-42DA-97D2-EFB2D2DE6DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675FF721-AB5A-42DA-97D2-EFB2D2DE6DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675FF721-AB5A-42DA-97D2-EFB2D2DE6DAF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{675FF721-AB5A-42DA-97D2-EFB2D2DE6DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675FF721-AB5A-42DA-97D2-EFB2D2DE6DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675FF721-AB5A-42DA-97D2-EFB2D2DE6DAF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B18E9818-3302-4404-A7A7-14CDF66AA53A}
+	EndGlobalSection
+EndGlobal

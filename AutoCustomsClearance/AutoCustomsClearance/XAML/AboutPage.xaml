@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="AutoCustomsClearance.XAML.AboutPage"
+             Title="О программе"
+              Style="{StaticResource PageStyle}">
+    <ContentPage.Content>
+        <StackLayout Margin="0,0,0,0" Padding="10,10,10,10">
+            <Label FontSize="Medium"
+                    Text="Приложение предназначено для быстрого расчета таможенных платежей* при ввозе 
+                   автомобилей из-за пределов Таможенного союза."/>
+            <Label TextColor="Red" FontSize="Small"
+                    Text="*Расчет является ориентировочным"/>
+            <Button Text="Назад"
+                    android:Button.UseDefaultShadow="True"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="Center"
+                    Clicked="OnInfoCloseClicked"
+                    CornerRadius="3"
+                    BackgroundColor="Orange"
+                    WidthRequest="150"
+                    HeightRequest="55"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
